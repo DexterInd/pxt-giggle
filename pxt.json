@@ -10,10 +10,10 @@
     "description": "GiggleBot is a microbit rover by Dexter Industries, it offers a total of 9 neopixels, 2 line sensors, 2 light sensors, and 2 servos",
     "files": [
         "giggle.ts",
-        "_locale/giggle-strings.json",
-        "_locale/giggle-jsdoc-strings.json",
-        "_locale/fr/giggle-strings.json",
-        "_locale/fr/giggle-jsdoc-strings.json",
+        "_locales/giggle-strings.json",
+        "_locales/giggle-jsdoc-strings.json",
+        "_locales/fr/giggle-strings.json",
+        "_locales/fr/giggle-jsdoc-strings.json",
         "README.md"
     ]
 }
