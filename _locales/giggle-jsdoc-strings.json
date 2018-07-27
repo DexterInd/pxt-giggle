@@ -1,0 +1,16 @@
+{
+  "lights.smile": "Lets you use the blocks in the neopixel category for better control over the smile/rainbow.",
+  "lights.smileCycleRainbow": "Displays the colors of the rainbow on the lights and cycles through them",
+  "lights.smileCycleRainbowTime": "Displays the colors of the rainbow on the lights and cycles through them based on times",
+  "lights.smileCycleRainbowTime|param|cycle_length": "how long (in ms) the cycling will last for: eg: 3000",
+  "lights.smileCycleRainbowTime|param|delay": "how long to wait(in ms) before cycling; eg: 100, 200",
+  "lights.smileCycleRainbow|param|nbcycles": "how many times the rainbow will do a full cycle; eg: 3, 5, 10",
+  "lights.smileRainbow": "Will display a rainbow of colors on the smile lights",
+  "lights.smileShowGraph": "Use the smile lights to display a line graph of a certain value on a graph of 0 to Max value",
+  "lights.whichEye": "Lets you use the blocks in the neopixel category for better control over the eyes.",
+  "remote.onRemoteControl": "Use this block on the GiggleBot to control it with a second micro:bit",
+  "remote.onRemoteControl|param|radioBlock": "eg:1",
+  "remote.remoteControl": "Use this block to turn a second Micro:bit into a remote controller.\nEasiest approach is to put this block inside a \"Forever\" block.\nYou will need to use the \"remote receiver mode\" block on the GiggleBot itself.",
+  "remote.remoteControlAction": "@param",
+  "remote.remoteControl|param|radioBlock": "eg: 1"
+}
