@@ -36,6 +36,7 @@ namespace lights {
     //% blockId="gigglebot_eye" block="%which"
     //% group=variables
     //% weight=50
+    //% blockSetVariable=eye
     export function whichEye(which: gigglebotWhichEye): neopixel.Strip {
 
         if (which == gigglebotWhichEye.Left)
@@ -76,7 +77,6 @@ namespace lights {
      * @param nbcycles how many times the rainbow will do a full cycle; eg: 3, 5, 10
      */
     //% blockId="gigglebot_rainbow_cycle" block="cycle rainbow %nbcycles| times "
-    //% blockSetVariable=smile
     //% weight=98
     export function smileCycleRainbow(nbcycles: number = 3) {
         smileNeopixel.showRainbow(1, 315)
@@ -92,7 +92,6 @@ namespace lights {
      * @param delay how long to wait(in ms) before cycling; eg: 100, 200
      * @param cycle_length how long (in ms) the cycling will last for: eg: 3000
      */
-    //% blockSetVariable=smile
     //% blockId="gigglebot_rainbow_cycle_time" block="cycle rainbow every %delay| ms for %cycle_length| ms "
     //% weight=97
     export function smileCycleRainbowTime(delay: number = 100, cycle_length: number = 3000) {
@@ -108,7 +107,6 @@ namespace lights {
      * Use the smile lights to display a line graph of a certain value on a graph of 0 to Max value
      */
 
-    //% blockSetVariable=smile
     //% blockId="gigglebot_line_graph" block="display graph of %graph_value| with a max of %graph_max"
     //% weight=90
     export function smileShowGraph(graph_value: number, graph_max: number) {
