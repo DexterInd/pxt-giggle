@@ -1,6 +1,6 @@
 {
     "name": "giggle",
-    "version": "v0.0.6",
+    "version": "v0.0.8",
     "dependencies": {
         "core": "*",
         "radio": "*",
