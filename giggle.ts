@@ -33,6 +33,8 @@ namespace lights {
      * Lets you use the blocks in the neopixel category for better control over the eyes.
      */
     //% blockId="gigglebot_eye" block="%which"
+    //% group=variables
+    //% weight=50
     export function whichEye(which: gigglebotWhichEye): neopixel.Strip {
 
         if (which == gigglebotWhichEye.Left)
@@ -47,11 +49,14 @@ namespace lights {
      * Lets you use the blocks in the neopixel category for better control over the smile/rainbow.
      */
     //% blockId="gigglebot_get_smile" block="smile"
+    //% group=variables
+    //% weight=50
     export function smile(): neopixel.Strip {
         return smileNeopixel
     }
 
     //% blockId="gigglebot_smile" block="display a  %smile_color|smile"
+    //% weight=100
     export function smileShow(smile_color: NeoPixelColors) {
         smileNeopixel.showColor(neopixel.colors(smile_color))
     }
@@ -60,6 +65,7 @@ namespace lights {
      * Will display a rainbow of colors on the smile lights
      */
     //% blockId="gigglebot_rainbow_smile" block="display a rainbow smile"
+    //% weight=99
     export function smileRainbow() {
         smileNeopixel.showRainbow(1, 315)
     }
@@ -70,6 +76,7 @@ namespace lights {
      */
     //% blockId="gigglebot_rainbow_cycle" block="cycle rainbow %nbcycles| times "
     //% blockSetVariable=smile
+    //% weight=98
     export function smileCycleRainbow(nbcycles: number = 3) {
         smileNeopixel.showRainbow(1, 315)
         for (let _i = 0; _i < (nbcycles * 7); _i++) {
@@ -86,6 +93,7 @@ namespace lights {
      */
     //% blockSetVariable=smile
     //% blockId="gigglebot_rainbow_cycle_time" block="cycle rainbow every %delay| ms for %cycle_length| ms "
+    //% weight=99
     export function smileCycleRainbowTime(delay: number = 100, cycle_length: number = 3000) {
         smileNeopixel.showRainbow(1, 315)
         for (let _i = 0; _i < (cycle_length / delay); _i++) {
@@ -101,6 +109,7 @@ namespace lights {
 
     //% blockSetVariable=smile
     //% blockId="gigglebot_line_graph" block="display graph of %graph_value| with a max of %graph_max"
+    //% weight=90
     export function smileShowGraph(graph_value: number, graph_max: number) {
         smileNeopixel.showBarGraph(graph_value, graph_max)
     }
