@@ -1,6 +1,7 @@
 
 
 //% weight=99 color=#46BFB1 icon="\uf0d1"
+//% groups='["other", "variables"]'
 namespace lights {
 
     let stripNeopixel = neopixel.create(DigitalPin.P8, 9, NeoPixelMode.RGB)
@@ -93,7 +94,7 @@ namespace lights {
      */
     //% blockSetVariable=smile
     //% blockId="gigglebot_rainbow_cycle_time" block="cycle rainbow every %delay| ms for %cycle_length| ms "
-    //% weight=99
+    //% weight=97
     export function smileCycleRainbowTime(delay: number = 100, cycle_length: number = 3000) {
         smileNeopixel.showRainbow(1, 315)
         for (let _i = 0; _i < (cycle_length / delay); _i++) {
@@ -127,6 +128,7 @@ namespace remote {
      */
     //% blockId="gigglebot_remote_control"
     //% block="external remote control, group %radio_block"
+    //% weight=99
     export function remoteControl(radioBlock: number): void {
         let powerLeft = gigglebot.leftPower()
         let powerRight = gigglebot.rightPower()
@@ -148,6 +150,7 @@ namespace remote {
     //% mutate=objectdestructuring
     //% mutateText=Packet
     //% mutateDefaults="radio_block"
+    //% weight=98
     //% blockId=gigglebot_remote block="on received remote control, group %radio_block"
     export function onRemoteControl(radioBlock: number, cb: (packet: radio.Packet) => void) {
         radio.setGroup(radioBlock)
@@ -168,6 +171,7 @@ namespace remote {
      */
     //% blockId="gigglebot_remote_control_action"
     //% block="do remote control action"
+    //% weight=97
     export function remoteControlAction(): void {
         gigglebot.setLeftPower(parseInt(packet.receivedString))
         gigglebot.setRightPower(packet.receivedNumber)
