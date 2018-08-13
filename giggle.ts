@@ -1,4 +1,32 @@
 
+enum gigglebotWhichEye {
+    //% block="both eyes"
+    Both = 2,
+    //% block="left eye"
+    Left = 1,
+    //% block="right eye"
+    Right = 0
+}
+
+enum gigglebotEyeAction {
+    //% block="open"
+    Open,
+    //% block="close"
+    Close
+}
+
+enum gigglebotGigglePixels {
+    Right,
+    Left,
+    SmileOne,
+    SmileTwo,
+    SmileThree,
+    SmileFour,
+    SmileFive,
+    SmileSix,
+    SmileSeven
+}
+
 
 //% weight=99 color=#46BFB1 icon="\uf0d1"
 //% groups='["other", "variables"]'
