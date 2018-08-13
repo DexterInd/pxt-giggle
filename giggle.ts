@@ -25,6 +25,7 @@ enum gigglebotGigglePixels {
     SmileFive,
     SmileSix,
     SmileSeven
+
 }
 
 
@@ -46,10 +47,12 @@ namespace lights {
         eyeNeopixelLeft.setBrightness(10)
         eyeNeopixelRight.setBrightness(10)
         smileNeopixel.setBrightness(40)
+
         for (let _i = 0; _i < gigglebotGigglePixels.SmileSeven; _i++) {
             stripNeopixel.setPixelColor(_i, neopixel.colors(NeoPixelColors.Black))
         }
         stripNeopixel.show()
+
         if (gigglebot.voltageBattery() < 3400) {
             eyeColorLeft = neopixel.colors(NeoPixelColors.Red)
             eyeColorRight = neopixel.colors(NeoPixelColors.Red)
@@ -167,6 +170,7 @@ namespace remote {
     }
 
     const packet = new radio.Packet();
+
     /**
      * Use this block on the GiggleBot to control it with a second micro:bit
      * @param radioBlock eg:1
