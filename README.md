@@ -14,22 +14,22 @@ Turning happens around a wheel, it's a nice way of going around an obstacle.
 Spinning happens on the spot, useful when drawing
 Steering is up to you, you can use it to orbit around a "sun"
 
-![Turning, Spinning and Steering](https://github.com/dexterind/pxt-giggle/images/turning_spinning_steering.png)
+![Turning, Spinning and Steering](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/turning_spinning_steering.png)
 
 ### Displaying a smile
 To display a big red smile:
 
-![Makecode for a smile](https://github.com/dexterind/pxt-giggle/images/red_smile.png)
+![Makecode for a smile](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/red_smile.png)
 
 ### Displaying a rainbow smile for 3 seconds
 Because everyone loves rainbows, the Gigglebot can smile at you in rainbow colors!
 
-![Makecode for a rainbow](https://github.com/dexterind/pxt-giggle/images/rainbow_3sec.png)
+![Makecode for a rainbow](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/rainbow_3sec.png)
 
 ### Using the distance sensor
 This piece of code will start the Gigglebot forward when button A is pressed. At all times, the distance sensor displays the distance to an obstacle onto the smile and will stop the Gigglebot if the obstacle is closer than 10 cm.
 
-![Distance sensor](https://github.com/dexterind/pxt-giggle/images/distance_sensor.png)
+![Distance sensor](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/distance_sensor.png)
 
 ## Supported targets
 
