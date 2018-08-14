@@ -7,7 +7,7 @@ For more information: https://www.gigglebot.io/pages/program-the-gigglebot-robot
 ### Driving around
 To drive forward and back for 2 seconds each:
 
-![Makecode for forward and back](https://github.com/DexterInd/pxt-giggle/images/forward_backward_2sec.png)
+![Makecode for forward and back](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/forward_backward_2sec.png)
 
 ### Turning, Spinning and Steering
 Turning happens around a wheel, it's a nice way of going around an obstacle.
