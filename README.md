@@ -22,7 +22,7 @@ To display a big red smile:
 ![Makecode for a smile](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/red_smile.png)
 
 ### Displaying a rainbow smile for 3 seconds
-Because everyone loves rainbows, the Gigglebot can smile at you in rainbow colors!
+Because everyone loves rainbows, the Gigglebot can smile at you in rainbow colors. It's so happy it's giggling in colors!
 
 ![Makecode for a rainbow](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/rainbow_3sec.png)
 
