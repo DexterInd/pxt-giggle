@@ -22,7 +22,7 @@ To display a big red smile:
 ![Makecode for a smile](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/red_smile.png)
 
 ### Displaying a rainbow smile for 3 seconds
-Because everyone loves rainbows, the Gigglebot can smile at you in rainbow colors!
+Because everyone loves rainbows, the Gigglebot can smile at you in rainbow colors. It's so happy it's giggling in colors!
 
 ![Makecode for a rainbow](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/rainbow_3sec.png)
 
@@ -30,6 +30,14 @@ Because everyone loves rainbows, the Gigglebot can smile at you in rainbow color
 This piece of code will start the Gigglebot forward when button A is pressed. At all times, the distance sensor displays the distance to an obstacle onto the smile and will stop the Gigglebot if the obstacle is closer than 10 cm.
 
 ![Distance sensor](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/distance_sensor.png)
+
+### To use a second micro:bit as a remote control
+
+Use a second micro:bit as a remote control for your Gigglebot. On this micro:bit, put the following code:
+![Remote Control](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/microbit_controller.png)
+
+On your gigglebot, put this code:
+![Remote Controlled Gigglebot](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/gigglebot_controlled.png)
 
 ## Supported targets
 
