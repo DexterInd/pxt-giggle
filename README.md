@@ -37,6 +37,7 @@ Use a second micro:bit as a remote control for your Gigglebot. On this micro:bit
 ![Remote Control](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/microbit_controller.png)
 
 On your gigglebot, put this code:
+
 ![Remote Controlled Gigglebot](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/gigglebot_controlled.png)
 
 ## Supported targets
