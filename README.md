@@ -16,15 +16,29 @@ Steering is up to you, you can use it to orbit around a "sun"
 
 ![Turning, Spinning and Steering](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/turning_spinning_steering.png)
 
-### Displaying a smile
-To display a big red smile:
+### Following a line
+The GiggleBot comes with two line sensors that allows it to follow either a thin line or a thick line. The thin line is thin enough to fit between the two sensors, while the thick line is thick enough that both sensors will fit within the line.
 
-![Makecode for a smile](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/red_smile.png)
+![Follow a thick line](https://raw.githubusercontent.com/DexterInd/pxt-gigglebot/master/images/follow_line.png)
 
-### Displaying a rainbow smile for 3 seconds
-Because everyone loves rainbows, the Gigglebot can smile at you in rainbow colors. It's so happy it's giggling in colors!
+### Reading the line sensors
 
-![Makecode for a rainbow](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/rainbow_3sec.png)
+You can also access the line sensors values directly. This allows you to write a line follower logic that is tailored to your specific needs.
+
+![Read Line Sensor Value](https://raw.githubusercontent.com/DexterInd/pxt-gigglebot/master/images/line_sensor_value.png)
+
+### Following a light
+
+The GiggleBot comes with two light sensors that allows it to follow a light, a little bit like a cat would.  Shine a flashlight onto one eye will get the GiggleBot to turn in that direction.
+
+![Follow Light](https://raw.githubusercontent.com/DexterInd/pxt-gigglebot/master/images/follow_light.png)
+
+### Reading the light sensor values
+
+You can also read the light sensors values directly in order to implement a different behaviour, like having the GiggleBot fall asleep when it gets dark, and wake up when there's light.
+
+![Falls Asleep when dark](https://raw.githubusercontent.com/DexterInd/pxt-gigglebot/master/images/light_sensor_falls_asleep.png)
+
 
 ### Using the distance sensor
 This piece of code will start the Gigglebot forward when button A is pressed. At all times, the distance sensor displays the distance to an obstacle onto the smile and will stop the Gigglebot if the obstacle is closer than 10 cm.
