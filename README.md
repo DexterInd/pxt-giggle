@@ -58,6 +58,7 @@ This piece of code will start the Gigglebot forward when button A is pressed. At
 ### To use a second micro:bit as a remote control
 
 Use a second micro:bit as a remote control for your Gigglebot. On this micro:bit, put the following code:
+
 ![Remote Control](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/microbit_controller.png)
 
 On your gigglebot, put this code:
