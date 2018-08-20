@@ -16,6 +16,16 @@ Steering is up to you, you can use it to orbit around a "sun"
 
 ![Turning, Spinning and Steering](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/turning_spinning_steering.png)
 
+### Displaying a smile
+To display a big red smile:
+
+![Makecode for a smile](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/red_smile.png)
+
+### Displaying a rainbow smile for 3 seconds
+Because everyone loves rainbows, the Gigglebot can smile at you in rainbow colors. It's so happy it's giggling in colors!
+
+![Makecode for a rainbow](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/rainbow_3sec.png)
+
 ### Following a line
 The GiggleBot comes with two line sensors that allows it to follow either a thin line or a thick line. The thin line is thin enough to fit between the two sensors, while the thick line is thick enough that both sensors will fit within the line.
 
