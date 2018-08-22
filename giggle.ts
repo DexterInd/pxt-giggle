@@ -29,7 +29,7 @@ enum gigglebotGigglePixels {
 }
 
 
-//% weight=98 color=#46BFB1 icon="\uf0d1"
+//% weight=99 color=#46BFB1 icon="\uf0d1"
 //% groups='["other", "variables"]'
 namespace lights {
 
@@ -144,7 +144,7 @@ namespace lights {
     }
 }
 
-//% weight=97 color=#46BFB1 icon="\uf0d1"
+//% weight=99 color=#46BFB1 icon="\uf0d1"
 namespace remote {
     /**
      */
