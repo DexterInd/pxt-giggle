@@ -4,10 +4,16 @@ For more information: https://www.gigglebot.io/pages/program-the-gigglebot-robot
 
 ## Example Usage
 
-### Driving around
+### Driving around #driveMillisec
 To drive forward and back for 2 seconds each:
 
-![Makecode for forward and back](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/forward_backward_2sec.png)
+<!-- ![Makecode for forward and back](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/forward_backward_2sec.png) -->
+'''
+    input.onButtonPressed(Button.A, () => {
+    gigglebot.driveMillisec(gigglebotWhichDriveDirection.Forward, 2000)
+    gigglebot.driveMillisec(gigglebotWhichDriveDirection.Backward, 2000)
+})
+'''
 
 ### Turning, Spinning and Steering
 Turning happens around a wheel, it's a nice way of going around an obstacle.
@@ -55,15 +61,34 @@ This piece of code will start the Gigglebot forward when button A is pressed. At
 
 ![Distance sensor](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/distance_sensor.png)
 
-### To use a second micro:bit as a remote control
+### To use a second micro:bit as a remote control 
+This is a quick and rewarding project! You can control your Gigglebot by using a second microbit. You will need to have :
+* [You will need a microbit in your hand, or on your head that we will call the microbit-controller.]
+* [You will need a microbit on the Gigglebot that will obey the microbit-controller.]
+* [The microbit-controller needs its own code to send radio messages to the gigglebot-microbit. The microbit-controller is unable to control the Gigglebot directly.]
+* [The gigglebot-microbit receives radio messages and translates them into gigglebot commands.]
 
-Use a second micro:bit as a remote control for your Gigglebot. On this micro:bit, put the following code:
+#### On the remote micro:bit  #remoteControl
 
-![Remote Control](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/microbit_controller.png)
+Use a second micro:bit as a remote control for your Gigglebot. Moving the remote hand-held microbit will control the Gigglebot.
+On this micro:bit, put the following code:
 
-On your gigglebot, put this code:
+'''
+basic.forever(() => {
+  remote.remoteControl(1)
+})
+'''
 
-![Remote Controlled Gigglebot](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/gigglebot_controlled.png)
+#### On your gigglebot's microbit #onRemoteControl #remoteControlAction
+
+On the gigglebot's micro:bit, put this code:
+
+<!-- ![Remote Controlled Gigglebot](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/gigglebot_controlled.png) -->
+'''
+remote.onRemoteControl(1, () => {
+    remote.remoteControlAction()
+})
+'''
 
 ## Supported targets
 
