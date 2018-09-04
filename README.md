@@ -30,6 +30,16 @@ You can control how the colors get cycled through, how long each color gets disp
 lights.smileCycleRainbowTime(100, 3000)
 ```
 
+### Use the smile to display a value #lights-smileshowgraph
+
+You can use the smile to display a value visually. For example, the Gigglebot can give you an idea of how far it is from an object. The below code will show a full smile if there is no obstacle within a meter. Then leds will turn off one by one as the Gigglebot gets closer to the obstacle.
+
+```
+basic.forever(() => {
+    lights.smileShowGraph(gigglebot.distanceSensorReadRangeContinuous(), 1000)
+})
+```
+
 ### Control the NeoPixels eyes #lights-whicheye
 You can choose to change the eye colors to your heart content by using the Neopixels blocks. This variable block will allow you to decide which eye.
 This will turn both eyes to green.
