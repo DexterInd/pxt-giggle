@@ -25,7 +25,6 @@ enum gigglebotGigglePixels {
     SmileFive,
     SmileSix,
     SmileSeven
-
 }
 
 
@@ -47,12 +46,10 @@ namespace lights {
         eyeNeopixelLeft.setBrightness(10)
         eyeNeopixelRight.setBrightness(10)
         smileNeopixel.setBrightness(40)
-
         for (let _i = 0; _i < gigglebotGigglePixels.SmileSeven; _i++) {
             stripNeopixel.setPixelColor(_i, neopixel.colors(NeoPixelColors.Black))
         }
         stripNeopixel.show()
-
         if (gigglebot.voltageBattery() < 3400) {
             eyeColorLeft = neopixel.colors(NeoPixelColors.Red)
             eyeColorRight = neopixel.colors(NeoPixelColors.Red)
@@ -135,6 +132,8 @@ namespace lights {
 
     /**
      * Use the smile lights to display a line graph of a certain value on a graph of 0 to Max value
+     * @param graph_value the value to be displayed; eg: 1
+     * @param graph_max the maximum value, which doesn't have to be a multiple of 7; eg: 7
      */
 
     //% blockId="gigglebot_line_graph" block="display graph of %graph_value| with a max of %graph_max"
@@ -143,7 +142,6 @@ namespace lights {
         smileNeopixel.showBarGraph(graph_value, graph_max)
     }
 }
-
 //% weight=99 color=#46BFB1 icon="\uf0d1"
 namespace remote {
     /**
