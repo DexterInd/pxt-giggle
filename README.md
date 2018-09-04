@@ -8,42 +8,42 @@ For more information: https://www.gigglebot.io/pages/program-the-gigglebot-robot
 ### Displaying a smile #lights-smileshow
 To display a big red smile:
 
-'''
+```
 lights.smileShow(NeoPixelColors.Red)
-'''
+```
 ### Displaying a rainbow smile  #lights-smilerainbow
 Because everyone loves rainbows, the Gigglebot can smile at you in rainbow colors. It's so happy it's giggling in colors!
-'''
+```
 lights.smileRainbow()
-'''
+```
 
 ### Cycling through the colors of the rainbow #lights-smilecyclerainbow
 
 You can cycle through the colors of the rainbow if you want a dazzling smile! This block will cycle through the colors three times.
-'''
+```
 lights.smileCycleRainbow(3)
-'''
+```
 
 ### Control that rainbow #lights-smilecyclerainbowtime
 You can control how the colors get cycled through, how long each color gets displayed, and how long the whole cycle lasts.
-'''
+```
 lights.smileCycleRainbowTime(100, 3000)
-'''
+```
 
 ### Control the NeoPixels eyes #lights-whicheye
 You can choose to change the eye colors to your heart content by using the Neopixels blocks. This variable block will allow you to decide which eye.
 This will turn both eyes to green.
-'''
+```
 lights.whichEye(gigglebotWhichEye.Both).showColor(neopixel.colors(NeoPixelColors.Green))
-'''
+```
 
 ### More control over the NeoPixels smile #lights-smile
 You can use the Neopixel blocks to control the smile. The following code would turn the lights off.
-'''
+```
 lights.smile().clear()
-'''
+```
 
-### To use a second micro:bit as a remote control #remoteControl #onRemoteControl #remoteControlAction
+## To use a second micro:bit as a remote control #remoteControl #onRemoteControl #remoteControlAction
 This is a quick and rewarding project! You can control your Gigglebot by using a second microbit. You will need to have :
 * [You will need a microbit in your hand, or on your head that we will call the microbit-controller.]
 * [You will need a microbit on the Gigglebot that will obey the microbit-controller.]
@@ -55,22 +55,22 @@ This is a quick and rewarding project! You can control your Gigglebot by using a
 Use a second micro:bit as a remote control for your Gigglebot. Moving the remote hand-held microbit will control the Gigglebot.
 On this micro:bit, put the following code:
 
-'''
+```
 basic.forever(() => {
   remote.remoteControl(1)
 })
-'''
+```
 
 #### On your gigglebot's microbit 
 
 On the gigglebot's micro:bit, put this code:
 
 <!-- ![Remote Controlled Gigglebot](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/gigglebot_controlled.png) -->
-'''
+```
 remote.onRemoteControl(1, () => {
     remote.remoteControlAction()
 })
-'''
+```
 
 ## Supported targets
 
