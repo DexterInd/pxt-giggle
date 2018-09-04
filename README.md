@@ -4,71 +4,53 @@ For more information: https://www.gigglebot.io/pages/program-the-gigglebot-robot
 
 ## Example Usage
 
-### Driving around #driveMillisec
-To drive forward and back for 2 seconds each:
 
-<!-- ![Makecode for forward and back](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/forward_backward_2sec.png) -->
-'''
-    input.onButtonPressed(Button.A, () => {
-    gigglebot.driveMillisec(gigglebotWhichDriveDirection.Forward, 2000)
-    gigglebot.driveMillisec(gigglebotWhichDriveDirection.Backward, 2000)
-})
-'''
-
-### Turning, Spinning and Steering
-Turning happens around a wheel, it's a nice way of going around an obstacle.
-Spinning happens on the spot, useful when drawing
-Steering is up to you, you can use it to orbit around a "sun"
-
-![Turning, Spinning and Steering](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/turning_spinning_steering.png)
-
-### Displaying a smile
+### Displaying a smile #lights-smileshow
 To display a big red smile:
 
-![Makecode for a smile](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/red_smile.png)
-
-### Displaying a rainbow smile for 3 seconds
+'''
+lights.smileShow(NeoPixelColors.Red)
+'''
+### Displaying a rainbow smile  #lights-smilerainbow
 Because everyone loves rainbows, the Gigglebot can smile at you in rainbow colors. It's so happy it's giggling in colors!
+'''
+lights.smileRainbow()
+'''
 
-![Makecode for a rainbow](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/rainbow_3sec.png)
+### Cycling through the colors of the rainbow #lights-smilecyclerainbow
 
-### Following a line
-The GiggleBot comes with two line sensors that allows it to follow either a thin line or a thick line. The thin line is thin enough to fit between the two sensors, while the thick line is thick enough that both sensors will fit within the line.
+You can cycle through the colors of the rainbow if you want a dazzling smile! This block will cycle through the colors three times.
+'''
+lights.smileCycleRainbow(3)
+'''
 
-![Follow a thick line](https://raw.githubusercontent.com/DexterInd/pxt-gigglebot/master/images/follow_line.png)
+### Control that rainbow #lights-smilecyclerainbowtime
+You can control how the colors get cycled through, how long each color gets displayed, and how long the whole cycle lasts.
+'''
+lights.smileCycleRainbowTime(100, 3000)
+'''
 
-### Reading the line sensors
+### Control the NeoPixels eyes #lights-whicheye
+You can choose to change the eye colors to your heart content by using the Neopixels blocks. This variable block will allow you to decide which eye.
+This will turn both eyes to green.
+'''
+lights.whichEye(gigglebotWhichEye.Both).showColor(neopixel.colors(NeoPixelColors.Green))
+'''
 
-You can also access the line sensors values directly. This allows you to write a line follower logic that is tailored to your specific needs.
+### More control over the NeoPixels smile #lights-smile
+You can use the Neopixel blocks to control the smile. The following code would turn the lights off.
+'''
+lights.smile().clear()
+'''
 
-![Read Line Sensor Value](https://raw.githubusercontent.com/DexterInd/pxt-gigglebot/master/images/line_sensor_value.png)
-
-### Following a light
-
-The GiggleBot comes with two light sensors that allows it to follow a light, a little bit like a cat would.  Shine a flashlight onto one eye will get the GiggleBot to turn in that direction.
-
-![Follow Light](https://raw.githubusercontent.com/DexterInd/pxt-gigglebot/master/images/follow_light.png)
-
-### Reading the light sensor values
-
-You can also read the light sensors values directly in order to implement a different behaviour, like having the GiggleBot fall asleep when it gets dark, and wake up when there's light.
-
-![Falls Asleep when dark](https://raw.githubusercontent.com/DexterInd/pxt-gigglebot/master/images/light_sensor_falls_asleep.png)
-
-
-### Using the distance sensor
-This piece of code will start the Gigglebot forward when button A is pressed. At all times, the distance sensor displays the distance to an obstacle onto the smile and will stop the Gigglebot if the obstacle is closer than 10 cm.
-
-![Distance sensor](https://raw.githubusercontent.com/DexterInd/pxt-giggle/master/images/distance_sensor.png)
-
-### To use a second micro:bit as a remote control 
+### To use a second micro:bit as a remote control #remoteControl #onRemoteControl #remoteControlAction
 This is a quick and rewarding project! You can control your Gigglebot by using a second microbit. You will need to have :
 * [You will need a microbit in your hand, or on your head that we will call the microbit-controller.]
 * [You will need a microbit on the Gigglebot that will obey the microbit-controller.]
 * [The microbit-controller needs its own code to send radio messages to the gigglebot-microbit. The microbit-controller is unable to control the Gigglebot directly.]
 * [The gigglebot-microbit receives radio messages and translates them into gigglebot commands.]
 
-#### On the remote micro:bit  #remoteControl
+#### On the remote micro:bit  
 
 Use a second micro:bit as a remote control for your Gigglebot. Moving the remote hand-held microbit will control the Gigglebot.
 On this micro:bit, put the following code:
@@ -79,7 +61,7 @@ basic.forever(() => {
 })
 '''
 
-#### On your gigglebot's microbit #onRemoteControl #remoteControlAction
+#### On your gigglebot's microbit 
 
 On the gigglebot's micro:bit, put this code:
 
