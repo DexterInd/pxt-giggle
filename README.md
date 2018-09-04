@@ -45,10 +45,10 @@ lights.smile().clear()
 
 ## To use a second micro:bit as a remote control #remoteControl #onRemoteControl #remoteControlAction
 This is a quick and rewarding project! You can control your Gigglebot by using a second microbit. You will need to have :
-* [You will need a microbit in your hand, or on your head that we will call the microbit-controller.]
-* [You will need a microbit on the Gigglebot that will obey the microbit-controller.]
-* [The microbit-controller needs its own code to send radio messages to the gigglebot-microbit. The microbit-controller is unable to control the Gigglebot directly.]
-* [The gigglebot-microbit receives radio messages and translates them into gigglebot commands.]
+* You will need a microbit in your hand, or on your head that we will call the microbit-controller.
+* You will need a microbit on the Gigglebot that will obey the microbit-controller.
+* The microbit-controller needs its own code to send radio messages to the gigglebot-microbit. The microbit-controller is unable to control the Gigglebot directly.
+* The gigglebot-microbit receives radio messages and translates them into gigglebot commands.
 
 #### On the remote micro:bit  
 
