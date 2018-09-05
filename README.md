@@ -72,7 +72,7 @@ basic.forever(() => {
 ```
 
 #### On your gigglebot's microbit #remote-onremotecontrol
-#### You can use a forever loop or any other type of loop #remote-remotecontrolaction
+#### use the following blocks #remote-remotecontrolaction
 
 On the gigglebot's micro:bit, put this code:
 
