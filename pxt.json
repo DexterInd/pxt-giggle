@@ -5,7 +5,7 @@
         "core": "*",
         "radio": "*",
         "neopixel": "github:microsoft/pxt-neopixel#v0.6.7",
-        "gigglebot": "github:dexterind/pxt-gigglebot#v1.0.1"
+        "gigglebot": "github:dexterind/pxt-gigglebot#v1.0.2"
     },
     "description": "GiggleBot is a microbit rover by Dexter Industries, it offers a total of 9 neopixels, 2 line sensors, 2 light sensors, and 2 servos",
     "files": [
