@@ -160,8 +160,8 @@ namespace remote {
         let powerLeft = gigglebot.leftPower()
         let powerRight = gigglebot.rightPower()
         radio.setGroup(radioBlock)
-        powerLeft = ((powerLeft * -1 * input.acceleration(Dimension.Y)) / 512) + ((50 * input.acceleration(Dimension.X)) / 512)
-        powerRight = ((powerRight * -1 * input.acceleration(Dimension.Y)) / 512) - ((50 * input.acceleration(Dimension.X)) / 512)
+        powerLeft = Math.idiv((powerLeft * -1 * input.acceleration(Dimension.Y)), 512) + Math.idiv((50 * input.acceleration(Dimension.X)), 512)
+        powerRight = Math.idiv((powerRight * -1 * input.acceleration(Dimension.Y)), 512) - Math.idiv((50 * input.acceleration(Dimension.X)), 512)
         // limit those values from -100 to 100
         powerLeft = Math.min(Math.max(powerLeft, -100), 100)
         powerRight = Math.min(Math.max(powerRight, -100), 100)
