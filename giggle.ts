@@ -28,7 +28,7 @@ enum gigglebotGigglePixels {
 }
 
 
-//% weight=99 color=#46BFB1 icon="\uf0d1"
+//% weight=98 color=#46BFB1 icon="\uf0d1"
 //% groups='["other", "variables"]'
 namespace lights {
 
@@ -142,7 +142,7 @@ namespace lights {
         smileNeopixel.showBarGraph(graph_value, graph_max)
     }
 }
-//% weight=99 color=#46BFB1 icon="\uf0d1"
+//% weight=97 color=#46BFB1 icon="\uf0d1"
 namespace remote {
     /**
      */

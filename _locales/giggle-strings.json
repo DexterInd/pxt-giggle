@@ -1,4 +1,9 @@
 {
+  "gigglebotEyeAction.Close|block": "close",
+  "gigglebotEyeAction.Open|block": "open",
+  "gigglebotWhichEye.Both|block": "both eyes",
+  "gigglebotWhichEye.Left|block": "left eye",
+  "gigglebotWhichEye.Right|block": "right eye",
   "lights.smileCycleRainbowTime|block": "cycle rainbow every %delay| ms for %cycle_length| ms ",
   "lights.smileCycleRainbow|block": "cycle rainbow %nbcycles| times ",
   "lights.smileRainbow|block": "display a rainbow smile",
@@ -12,5 +17,6 @@
   "remote.remoteControl|block": "external remote control, group %radio_block",
   "remote|block": "remote",
   "{id:category}Lights": "Lights",
-  "{id:category}Remote": "Remote"
+  "{id:category}Remote": "Remote",
+  "{id:group}variables": "variables"
 }
