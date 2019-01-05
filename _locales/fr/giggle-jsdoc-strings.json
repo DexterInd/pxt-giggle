@@ -13,6 +13,6 @@
   "remote.onRemoteControl": "Ce bloc permet au GiggleBot d'être contrôlé par un second micro:bit",
   "remote.onRemoteControl|param|radioBlock": "eg:1",
   "remote.remoteControl": "Ce bloc permet à un second Micro:bit de contrôler le GiggleBot.\nL'approche la plus simple est d'insérer ce bloc dans une boucle «Toujours».\nLe Gigglebot doit avoir les blocs de contrôle dans son micro:bit" ,
-  "remote.remoteControlAction": "@param",
-  "remote.remoteControl|param|radioBlock": "eg: 1"
+  "remote.remoteControlAction": "Ce bloc doit être inséré dans le bloc «sur réception d'une commande...» ",
+  "remote.remoteControl|param|radioBlock": "groupe radio pour la télécommande. eg: 1"
 }
