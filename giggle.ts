@@ -148,15 +148,6 @@ namespace remote {
      */
 
     /**
-     * Gets the message code
-     */
-    //% blockHidden=1 
-    //% blockId=remoteMessageCode block="$msg" 
-    export function __message(msg: number): number {
-        return msg;
-    }
-
-    /**
      * Use this block to turn a second Micro:bit into a remote controller.
      * Easiest approach is to put this block inside a "Forever" block.
      * You will need to use the "remote receiver mode" block on the GiggleBot itself.
@@ -175,6 +166,12 @@ namespace remote {
         // limit those values from -100 to 100
         powerLeft = Math.min(Math.max(powerLeft, -100), 100)
         powerRight = Math.min(Math.max(powerRight, -100), 100)
+
+        // Buffer is 8 bytes
+        const buf = control.createBuffer(8);
+        buf.setNumber(NumberFormat.Float32BE, 0, powerLeft);
+        buf.setNumber(NumberFormat.Float32BE, 4, powerRight);
+        radio.sendBuffer(buf)
     }
 
     export let lastPacket: radio.RadioPacket;
@@ -216,7 +213,6 @@ namespace remote {
     export function remoteControlAction(): void {
         let powerLeft = lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 0);
         let powerRight = lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 4);
-
         gigglebot.setLeftPower(powerLeft)
         gigglebot.setRightPower(powerRight)
         gigglebot.motorPowerAssignBoth(gigglebot.leftPower(), gigglebot.rightPower())
