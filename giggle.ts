@@ -144,8 +144,23 @@ namespace lights {
 }
 //% weight=97 color=#46BFB1 icon="\uf0d1"
 namespace remote {
+
     /**
+     * Use this block in the 'on Start' sequence.
+     * In order to have a remote micro:bit control the GiggleBot, both of them
+     * must be in the same radio group - or remote group. You can use either this
+     * block or the "radio set group" block found under Radio. 
+     * The two blocks are the same thing.
+     * Make sure your set of remote microbit and gigglebot is assigned a unique
+     * group, especially if you are in a group.
+     * @param id 
      */
+    //% blockId="gigglebot_remote_set_group"
+    //% block="set remote group %id"
+    //% weight=99
+    export function setGroup(id: number): void {
+        radio.setGroup(id)
+    }
 
     /**
      * Use this block to turn a second Micro:bit into a remote controller.
@@ -154,13 +169,12 @@ namespace remote {
      * @param radioBlock eg: 1
      */
     //% blockId="gigglebot_remote_control"
-    //% block="external remote controller using group %radio_block"
+    //% block="external remote controller"
     //% weight=99
-    export function remoteControl(radioBlock: number): void {
+    export function remoteControl(): void {
         let powerLeft = gigglebot.leftPower()
         let powerRight = gigglebot.rightPower()
 
-        radio.setGroup(radioBlock)
         powerLeft = Math.idiv((powerLeft * -1 * input.acceleration(Dimension.Y)), 512) + Math.idiv((50 * input.acceleration(Dimension.X)), 512)
         powerRight = Math.idiv((powerRight * -1 * input.acceleration(Dimension.Y)), 512) - Math.idiv((50 * input.acceleration(Dimension.X)), 512)
         // limit those values from -100 to 100
@@ -194,10 +208,9 @@ namespace remote {
      *
      */
     //% weight=98
-    //% blockId=gigglebot_remote block="gigglebot remotely controlled in group %radio_block" blockGap=16
+    //% blockId=gigglebot_remote block="remotely controlled gigglebot" blockGap=16
    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
-    export function onRemoteControl(radioBlock: number, cb: () => void) {
-        radio.setGroup(radioBlock)
+    export function onRemoteControl(cb: () => void) {
         remote_init();
         control.onEvent(DAL.MICROBIT_ID_RADIO, radio.MAKECODE_RADIO_EVT_BUFFER, () => {
             cb();
