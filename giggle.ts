@@ -147,23 +147,21 @@ namespace lights {
 //% groups='["other", "Both Remote and GiggleBot:", "Remote Controller:", "GiggleBot:"]'
 namespace remote {
 
-    let radio_id = -1
     /**
      * In order to have a remote micro:bit control the GiggleBot, both of them
      * must be in the same radio group - or remote group. You can use either this
      * block or the "radio set group" block found under Radio. 
      * The two blocks are the same thing.
      * Make sure your set of remote microbit and gigglebot is assigned a unique
-     * group, especially if you are in a group.
-     * @param id 
+     * group, especially if there are many gigglebot pairs around you.
+     * @param id eg: 1
      */
     //% blockId="gigglebot_remote_set_group"
-    //% block="set remote group %id"
+    //% block="remote set group %id"
     //% weight=99
     //% group="Both Remote and GiggleBot:"
     export function setGroup(id: number): void {
         radio.setGroup(id)
-        radio_id = id
     }
 
     /**
