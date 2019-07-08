@@ -64,20 +64,24 @@ This is a quick and rewarding project! You can control your Gigglebot by using a
 
 Use a second micro:bit as a remote control for your Gigglebot. Moving the remote hand-held microbit will control the Gigglebot.
 On this micro:bit, put the following code:
+(note that the group number must be the same between remote and GiggleBot, and each pair must have a unique number)
 
 ```blocks
-basic.forever(() => {
-  remote.remoteControl(1)
+remote.setGroup(1)
+basic.forever(function () {
+    remote.remoteControl()
 })
+
 ```
 
 #### On your gigglebot's microbit #remote-onremotecontrol
 #### use the following blocks #remote-remotecontrolaction
 
 On the gigglebot's micro:bit, put this code:
-
+(note that the group number must be the same between remote and GiggleBot, and each pair must have a unique number)
 ```blocks
-remote.onRemoteControl(1, () => {
+remote.setGroup(1)
+remote.onRemoteControl(function () {
     remote.remoteControlAction()
 })
 ```
@@ -101,5 +105,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-

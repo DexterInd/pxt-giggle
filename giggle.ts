@@ -143,10 +143,12 @@ namespace lights {
     }
 }
 //% weight=97 color=#46BFB1 icon="\uf0d1"
+
+//% groups='["other", "Both Remote and GiggleBot:", "Remote Controller:", "GiggleBot:"]'
 namespace remote {
 
+    let radio_id = -1
     /**
-     * Use this block in the 'on Start' sequence.
      * In order to have a remote micro:bit control the GiggleBot, both of them
      * must be in the same radio group - or remote group. You can use either this
      * block or the "radio set group" block found under Radio. 
@@ -158,8 +160,10 @@ namespace remote {
     //% blockId="gigglebot_remote_set_group"
     //% block="set remote group %id"
     //% weight=99
+    //% group="Both Remote and GiggleBot:"
     export function setGroup(id: number): void {
         radio.setGroup(id)
+        radio_id = id
     }
 
     /**
@@ -171,6 +175,7 @@ namespace remote {
     //% blockId="gigglebot_remote_control"
     //% block="external remote controller"
     //% weight=99
+    //% group="Remote Controller:"
     export function remoteControl(): void {
         let powerLeft = gigglebot.leftPower()
         let powerRight = gigglebot.rightPower()
@@ -209,7 +214,8 @@ namespace remote {
      */
     //% weight=98
     //% blockId=gigglebot_remote block="remotely controlled gigglebot" blockGap=16
-   //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
+    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
+    //% group="GiggleBot:"
     export function onRemoteControl(cb: () => void) {
         remote_init();
         control.onEvent(DAL.MICROBIT_ID_RADIO, radio.MAKECODE_RADIO_EVT_BUFFER, () => {
@@ -218,14 +224,16 @@ namespace remote {
     }
 
     /**
-     * @param
+     * Put this block inside of the 'remotely controlled gigglebot' to follow all comands received via remote control.
      */
     //% blockId="gigglebot_remote_control_action"
     //% block="do remote control action"
     //% weight=97
+    //% group="GiggleBot:"
     export function remoteControlAction(): void {
         let powerLeft = lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 0);
         let powerRight = lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 4);
+
         gigglebot.setLeftPower(powerLeft)
         gigglebot.setRightPower(powerRight)
         gigglebot.motorPowerAssignBoth(gigglebot.leftPower(), gigglebot.rightPower())
