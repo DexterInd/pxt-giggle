@@ -11,8 +11,8 @@
   "lights.smileShowGraph|param|graph_value": "la valeur à afficher; eg: 1",
   "lights.whichEye": "Permet d'utiliser les blocs de la catégorie Neopixel afin d'avoir un meilleur contrôle sur les yeux.",
   "remote.onRemoteControl": "Ce bloc permet au GiggleBot d'être contrôlé par un second micro:bit",
-  "remote.onRemoteControl|param|radioBlock": "eg:1",
   "remote.remoteControl": "Ce bloc permet à un second Micro:bit de contrôler le GiggleBot.\nL'approche la plus simple est d'insérer ce bloc dans une boucle «Toujours».\nLe Gigglebot doit avoir les blocs de contrôle dans son micro:bit" ,
   "remote.remoteControlAction": "Ce bloc doit être inséré dans le bloc «sur réception d'une commande...» ",
+  "remote.setGroup": "Chaque paire de microbits (GiggleBot et contrôle à distance) doit partager le même code de groupe. ",
   "remote.remoteControl|param|radioBlock": "groupe radio pour la télécommande. eg: 1"
 }
