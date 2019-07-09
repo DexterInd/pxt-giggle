@@ -14,7 +14,7 @@
   "lights|block": "lumières",
   "remote.onRemoteControl|block": "gigglebot en attente d'une commande",
   "remote.remoteControlAction|block": "exécuter la commande",
-  "remote.remoteControl|block": "télécommande externe",
+  "remote.remoteControl|block": "télécommande",
   "remote.setGroup|block": "télécommande définir groupe %id",
   "remote|block": "télécommande",
   "{id:category}Lights": "Lumières",
