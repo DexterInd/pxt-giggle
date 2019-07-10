@@ -21,6 +21,6 @@
   "{id:category}Remote": "Télécommande",
   "{id:group}Both Remote and GiggleBot:": "Télécommande et GiggleBot:",
   "{id:group}GiggleBot:": "GiggleBot:",
-  "{id:group}Remote Controller:": "Télécommande:",
+  "{id:group}Remote Controller:": "microbit externe:",
   "{id:group}variables": "variables"
 }
