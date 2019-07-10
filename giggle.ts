@@ -143,9 +143,26 @@ namespace lights {
     }
 }
 //% weight=97 color=#46BFB1 icon="\uf0d1"
+
+//% groups='["other", "Both Remote and GiggleBot:", "Remote Controller:", "GiggleBot:"]'
 namespace remote {
+
     /**
+     * In order to have a remote micro:bit control the GiggleBot, both of them
+     * must be in the same radio group - or remote group. You can use either this
+     * block or the "radio set group" block found under Radio. 
+     * The two blocks are the same thing.
+     * Make sure your set of remote microbit and gigglebot is assigned a unique
+     * group, especially if there are many gigglebot pairs around you.
+     * @param id eg: 1
      */
+    //% blockId="gigglebot_remote_set_group"
+    //% block="remote set group %id"
+    //% weight=99
+    //% group="Both Remote and GiggleBot:"
+    export function setGroup(id: number): void {
+        radio.setGroup(id)
+    }
 
     /**
      * Use this block to turn a second Micro:bit into a remote controller.
@@ -154,55 +171,69 @@ namespace remote {
      * @param radioBlock eg: 1
      */
     //% blockId="gigglebot_remote_control"
-    //% block="external remote control, group %radio_block"
+    //% block="external remote controller"
     //% weight=99
-    export function remoteControl(radioBlock: number): void {
+    //% group="Remote Controller:"
+    export function remoteControl(): void {
         let powerLeft = gigglebot.leftPower()
         let powerRight = gigglebot.rightPower()
-        radio.setGroup(radioBlock)
+
         powerLeft = Math.idiv((powerLeft * -1 * input.acceleration(Dimension.Y)), 512) + Math.idiv((50 * input.acceleration(Dimension.X)), 512)
         powerRight = Math.idiv((powerRight * -1 * input.acceleration(Dimension.Y)), 512) - Math.idiv((50 * input.acceleration(Dimension.X)), 512)
         // limit those values from -100 to 100
         powerLeft = Math.min(Math.max(powerLeft, -100), 100)
         powerRight = Math.min(Math.max(powerRight, -100), 100)
-        radio.sendValue(powerLeft + "", powerRight)
+
+        // Buffer is 8 bytes
+        const buf = control.createBuffer(8);
+        buf.setNumber(NumberFormat.Float32BE, 0, powerLeft);
+        buf.setNumber(NumberFormat.Float32BE, 4, powerRight);
+        radio.sendBuffer(buf)
     }
 
-    const packet = new radio.Packet();
+    export let lastPacket: radio.RadioPacket;
+    let initialized = false;
 
+    function remote_init() {
+        if (initialized) return;
+        initialized = true;
+        
+        radio.onDataReceived(() => {
+            lastPacket = radio.RadioPacket.getPacket(radio.readRawPacket());
+            control.raiseEvent(DAL.MICROBIT_ID_RADIO, radio.MAKECODE_RADIO_EVT_BUFFER);
+        })
+    }
+
+    
     /**
      * Use this block on the GiggleBot to control it with a second micro:bit
      * @param radioBlock eg:1
      *
      */
-    //% mutate=objectdestructuring
-    //% mutateText=Packet
-    //% mutateDefaults="radio_block"
     //% weight=98
-    //% blockId=gigglebot_remote block="on received remote control, group %radio_block"
-    export function onRemoteControl(radioBlock: number, cb: (packet: radio.Packet) => void) {
-        radio.setGroup(radioBlock)
-        radio.onDataReceived(() => {
-            radio.receiveNumber();
-            packet.receivedNumber = radio.receivedNumber();
-            packet.time = radio.receivedTime();
-            packet.serial = radio.receivedSerial();
-            packet.receivedString = radio.receivedString();
-            packet.receivedBuffer = radio.receivedBuffer();
-            packet.signal = radio.receivedSignalStrength();
-            cb(packet)
+    //% blockId=gigglebot_remote block="remotely controlled gigglebot" blockGap=16
+    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
+    //% group="GiggleBot:"
+    export function onRemoteControl(cb: () => void) {
+        remote_init();
+        control.onEvent(DAL.MICROBIT_ID_RADIO, radio.MAKECODE_RADIO_EVT_BUFFER, () => {
+            cb();
         });
     }
 
     /**
-     * @param
+     * Put this block inside of the 'remotely controlled gigglebot' to follow all comands received via remote control.
      */
     //% blockId="gigglebot_remote_control_action"
     //% block="do remote control action"
     //% weight=97
+    //% group="GiggleBot:"
     export function remoteControlAction(): void {
-        gigglebot.setLeftPower(parseInt(packet.receivedString))
-        gigglebot.setRightPower(packet.receivedNumber)
+        let powerLeft = lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 0);
+        let powerRight = lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 4);
+
+        gigglebot.setLeftPower(powerLeft)
+        gigglebot.setRightPower(powerRight)
         gigglebot.motorPowerAssignBoth(gigglebot.leftPower(), gigglebot.rightPower())
     }
 
