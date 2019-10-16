@@ -1,6 +1,6 @@
 {
-  "gigglebotEyeAction.Close|block": "ouvrir",
-  "gigglebotEyeAction.Open|block": "fermer",
+  "gigglebotEyeAction.Close|block": "fermer",
+  "gigglebotEyeAction.Open|block": "ouvrir",
   "gigglebotWhichEye.Both|block": "les deux yeux",
   "gigglebotWhichEye.Left|block": "l'œil gauche",
   "gigglebotWhichEye.Right|block": "l'œil droit",

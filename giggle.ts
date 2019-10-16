@@ -50,7 +50,7 @@ namespace lights {
             stripNeopixel.setPixelColor(_i, neopixel.colors(NeoPixelColors.Black))
         }
         stripNeopixel.show()
-        if (gigglebot.voltageBattery() < 3400) {
+        if (gigglebot.voltageBattery() < 3600) {
             eyeColorLeft = neopixel.colors(NeoPixelColors.Red)
             eyeColorRight = neopixel.colors(NeoPixelColors.Red)
         }
@@ -150,7 +150,7 @@ namespace remote {
     /**
      * In order to have a remote micro:bit control the GiggleBot, both of them
      * must be in the same radio group - or remote group. You can use either this
-     * block or the "radio set group" block found under Radio. 
+     * block or the "radio set group" block found under Radio.
      * The two blocks are the same thing.
      * Make sure your set of remote microbit and gigglebot is assigned a unique
      * group, especially if there are many gigglebot pairs around you.
@@ -181,7 +181,7 @@ namespace remote {
         powerLeft = Math.idiv((powerLeft * -1 * input.acceleration(Dimension.Y)), 512) + Math.idiv((50 * input.acceleration(Dimension.X)), 512)
         powerRight = Math.idiv((powerRight * -1 * input.acceleration(Dimension.Y)), 512) - Math.idiv((50 * input.acceleration(Dimension.X)), 512)
         // limit those values from -100 to 100
-        powerLeft = Math.min(Math.max(powerLeft, -100), 100)
+        powerLeft  = Math.min(Math.max(powerLeft,  -100), 100)
         powerRight = Math.min(Math.max(powerRight, -100), 100)
 
         // Buffer is 8 bytes
@@ -191,20 +191,6 @@ namespace remote {
         radio.sendBuffer(buf)
     }
 
-    export let lastPacket: radio.RadioPacket;
-    let initialized = false;
-
-    function remote_init() {
-        if (initialized) return;
-        initialized = true;
-        
-        radio.onDataReceived(() => {
-            lastPacket = radio.RadioPacket.getPacket(radio.readRawPacket());
-            control.raiseEvent(DAL.MICROBIT_ID_RADIO, radio.MAKECODE_RADIO_EVT_BUFFER);
-        })
-    }
-
-    
     /**
      * Use this block on the GiggleBot to control it with a second micro:bit
      * @param radioBlock eg:1
@@ -215,11 +201,8 @@ namespace remote {
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     //% group="GiggleBot:"
     export function onRemoteControl(cb: () => void) {
-        remote_init();
-        control.onEvent(DAL.MICROBIT_ID_RADIO, radio.MAKECODE_RADIO_EVT_BUFFER, () => {
-            cb();
-        });
-    }
+        radio.onReceivedBuffer(cb)
+        };
 
     /**
      * Put this block inside of the 'remotely controlled gigglebot' to follow all comands received via remote control.
@@ -229,12 +212,17 @@ namespace remote {
     //% weight=97
     //% group="GiggleBot:"
     export function remoteControlAction(): void {
-        let powerLeft = lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 0);
-        let powerRight = lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 4);
 
+        if (radio.lastPacket == null) {
+            return;
+        }
+
+        let powerLeft = radio.lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 0);
+        let powerRight = radio.lastPacket.bufferPayload.getNumber(NumberFormat.Float32BE, 4);
         gigglebot.setLeftPower(powerLeft)
-        gigglebot.setRightPower(powerRight)
+        gigglebot.setRightPower(powerRight);
         gigglebot.motorPowerAssignBoth(gigglebot.leftPower(), gigglebot.rightPower())
+        basic.pause(25)
     }
 
 }
