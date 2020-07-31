@@ -50,10 +50,10 @@ namespace lights {
             stripNeopixel.setPixelColor(_i, neopixel.colors(NeoPixelColors.Black))
         }
         stripNeopixel.show()
-        if (gigglebot.voltageBattery() < 3600) {
-            eyeColorLeft = neopixel.colors(NeoPixelColors.Red)
-            eyeColorRight = neopixel.colors(NeoPixelColors.Red)
-        }
+        // if (gigglebot.voltageBattery() < 3600) {
+        //     eyeColorLeft = neopixel.colors(NeoPixelColors.Red)
+        //     eyeColorRight = neopixel.colors(NeoPixelColors.Red)
+        // }
         eyeNeopixelLeft.setPixelColor(0, eyeColorLeft)
         eyeNeopixelRight.setPixelColor(0, eyeColorRight)
         eyeNeopixelBoth.show()
@@ -175,8 +175,8 @@ namespace remote {
     //% weight=99
     //% group="Remote Controller:"
     export function remoteControl(): void {
-        let powerLeft = gigglebot.leftPower()
-        let powerRight = gigglebot.rightPower()
+        let powerLeft = 60
+        let powerRight = 60
 
         powerLeft = Math.idiv((powerLeft * -1 * input.acceleration(Dimension.Y)), 512) + Math.idiv((50 * input.acceleration(Dimension.X)), 512)
         powerRight = Math.idiv((powerRight * -1 * input.acceleration(Dimension.Y)), 512) - Math.idiv((50 * input.acceleration(Dimension.X)), 512)
