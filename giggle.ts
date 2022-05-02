@@ -65,7 +65,6 @@ namespace lights {
     //% group=variables
     //% weight=50
     export function whichEye(which: gigglebotWhichEye): neopixel.Strip {
-
         if (which == gigglebotWhichEye.Left)
             return eyeNeopixelLeft
         else if (which == gigglebotWhichEye.Right)

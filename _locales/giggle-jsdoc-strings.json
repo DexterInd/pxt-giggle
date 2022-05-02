@@ -11,8 +11,8 @@
   "lights.smileShowGraph|param|graph_value": "the value to be displayed; eg: 1",
   "lights.whichEye": "Lets you use the blocks in the neopixel category for better control over the eyes.",
   "remote.onRemoteControl": "Use this block on the GiggleBot to control it with a second micro:bit",
-  "remote.remoteControl": "Use this block to turn a second Micro:bit into a remote controller.\nEasiest approach is to put this block inside a \"Forever\" block.\nYou will need to use the \"remote receiver mode\" block on the GiggleBot itself.",
+  "remote.remoteControl": "Use this block to turn a second micro:bit into a remote controller.\nEasiest approach is to put this block inside a \"Forever\" block.\nYou will need to use the \"remote receiver mode\" block on the GiggleBot itself.",
   "remote.remoteControlAction": "Put this block inside of the 'remotely controlled gigglebot' to follow all comands received via remote control.",
-  "remote.setGroup": "In order to have a remote micro:bit control the GiggleBot, both of them\nmust be in the same radio group - or remote group. You can use either this\nblock or the \"radio set group\" block found under Radio. \nThe two blocks are the same thing.\nMake sure your set of remote microbit and gigglebot is assigned a unique\ngroup, especially if there are many gigglebot pairs around you.",
+  "remote.setGroup": "In order to have a remote micro:bit control the GiggleBot, both of them\nmust be in the same radio group - or remote group. You can use either this\nblock or the \"radio set group\" block found under Radio. \nThe two blocks are the same thing.\nMake sure your set of remote microbits and GiggleBots is assigned a unique\ngroup, especially if there are many GiggleBot pairs around you.",
   "remote.setGroup|param|id": "eg: 1"
 }
