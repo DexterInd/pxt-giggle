@@ -58,11 +58,6 @@ namespace lights {
         eyeNeopixelRight.setPixelColor(0, eyeColorRight)
         eyeNeopixelBoth.show()
 }
-    //% blockId="gigglebot_eyes" block="Light the GiggleBot's eyes"
-    //% weight=100
-    export function show_eyes() {
-        lights.whichEye(gigglebotWhichEye.Both).showColor(neopixel.colors(NeoPixelColors.Red))
-}
     /**
      * Lets you use the blocks in the neopixel category for better control over the eyes.
      */
@@ -70,7 +65,6 @@ namespace lights {
     //% group=variables
     //% weight=50
     export function whichEye(which: gigglebotWhichEye): neopixel.Strip {
-
         if (which == gigglebotWhichEye.Left)
             return eyeNeopixelLeft
         else if (which == gigglebotWhichEye.Right)
